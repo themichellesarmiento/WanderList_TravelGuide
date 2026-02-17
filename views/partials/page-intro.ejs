@@ -1,0 +1,27 @@
+<%if(locals.pageType){%>
+  <%const isHomePage= pageType ==='Home' ? 'wrapper--home' : 'wrapper' %>
+  <%const isHomeContent= pageType ==='Home' ? 'home--content' : 'page--content' %>
+
+      <div class=<%=isHomePage%>>
+        <div class=<%=isHomeContent%>>
+          <h1 class="page__title">
+            <%=title%>
+          </h1>
+          <%if(locals.descriptions){%>
+            <%descriptions.forEach(text=>{%>
+              <p class="page__description">
+                <%=text%>
+              </p>
+          <%})}%>
+          <%if(locals.filteredAdventures){ %>
+            <p>Find destinations by budget: </p>
+              <div class="filters">
+                <a href="?budget=low" class="<%= budget === 'low'? 'isActive' : '' %>">Low</a>
+                <a href="?budget=medium" class="<%= budget ==='medium' ? 'isActive' : '' %>">Medium</a>
+                <a href="?budget=high" class="<%= budget ==='high' ? 'isActive' : '' %>">High</a>
+              </div>
+              <%-include('../partials/card')%>
+          <%}%>
+        </div>
+      </div>
+<%}%>

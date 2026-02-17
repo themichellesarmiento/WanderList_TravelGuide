@@ -1,0 +1,13 @@
+<button class="sidebar-toggle">Browse Destinations</button>
+<aside class="sidebar">
+  <% if (locals.links) { %>
+    <% links.forEach(e=> { %>
+      <% const currentPath=`/${e.type}/${e.id}`;%>
+        <li class="sidebar__elements">
+          <a href="<%= currentPath %>" class="<%= currentUrl === currentPath ? 'isActive' : '' %>">
+            <%= e.name %>
+          </a>
+        </li>
+    <% }) %>
+  <% } %>
+</aside>

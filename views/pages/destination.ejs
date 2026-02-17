@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wander List || Travel Guide</title>
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/typography.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/script/scripts.js" defer></script>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="header__logo">
+      <a href="/"><img src="/images/logo.png" alt="logo"></a>
+    </div>
+    <nav class="nav">
+      <li><a href='/' class="<%= currentUrl === '/' ? 'isActive' : ''%>">Home</a></li>
+      <li><a href='/adventures' class="<%= currentUrl.startsWith('/adventures') ? 'isActive' : ''%>">Adventures</a></li>
+      <li><a href='/cultures' class="<%= currentUrl.startsWith('/cultures') ? 'isActive' : ''%>">Culture</a></li>
+      <li><a href='/relaxations' class="<%= currentUrl.startsWith('/relaxations') ? 'isActive' : ''%>">Relaxation</a>
+      </li>
+    </nav>
+  </header>
+
+  <main class="main">
+    <%if(locals.pageType !=='Home' ){%>
+      <%-include('../partials/sidebar')%>
+    <%}%>
+    <% if(locals.error){ %>
+       <%- include('../partials/error') %>
+    <%}else if(locals.pageType){ %>
+        <%- include('../partials/page-intro') %>
+    <%}else{%>
+          <%- include('../partials/card') %>
+    <%}%>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer__brand">
+        <h3>WanderList</h3>
+        <p>Your guide to travel experiences by interest across Europe.</p>
+      </div>
+
+      <div class="footer__links">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/adventures">Adventures</a></li>
+          <li><a href="/cultures">Culture</a></li>
+          <li><a href="/relaxations">Relaxation</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__meta">
+        <p>&copy; 2026 WanderList</p>
+        <p>A project : Built with Node, Express & EJS</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

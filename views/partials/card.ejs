@@ -1,0 +1,39 @@
+<% if (locals.destination) { %>
+    <div class="wrapper">
+      <section class="category">
+        <div class="category__header">
+          <h2>
+            <%= destination.name %>
+          </h2>
+        </div>
+        <div class="card-contents">
+          <div class="image__container">
+            <img src="<%=destination.image%>" alt="<%=destination.name%>">
+          </div>
+          <h3>Country: <%=destination.country%>
+          </h3>
+          <p>
+            <%=destination.description%>
+          </p>
+          <p>
+            Highlights: <%=destination.highlights%>
+          </p>
+          <a href="/<%=destination.type%>">
+            Find a destination according to your budget!
+          </a>
+        </div>
+      </section>
+    </div>
+<% } %>
+<%if(locals.filteredAdventures){%>
+   <% filteredAdventures.forEach(destination => {%>
+        <div class="card-contents">
+          <div class="image__container">
+            <img src="<%=destination.image%>" alt="<%=destination.name%>">
+          </div>
+          <a href="/<%=destination.type%>/<%=destination.id%>">
+            <%=destination.name%>
+          </a>
+        </div>
+   <% }) %>
+<%};%>

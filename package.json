@@ -1,0 +1,23 @@
+{
+  "name": "wanderlist",
+  "version": "1.0.0",
+  "description": "a travel guide webpage",
+  "keywords": [
+    "node",
+    "express",
+    "ejs"
+  ],
+  "license": "ISC",
+  "author": "Michelle S.",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start": "node --watch app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "ejs": "^4.0.1",
+    "express": "^5.2.1"
+  }
+}
