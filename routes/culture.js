@@ -9,7 +9,7 @@ const __dirname = path.resolve();
 router.get('/', (req, res) => {
   const { budget } = req.query
 
-  const filteredAdventures = cultures.filter(a => a.budget === req.query.budget);
+  const filteredAdventures = cultures.filter(a => a.budget === budget);
 
   res.render(path.join(__dirname, 'views/pages/destination'), {
     title: 'Cultures',
