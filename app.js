@@ -5,7 +5,6 @@ import homepageRoute from './routes/home.js';
 import adventureRoute from './routes/adventure.js';
 import cultureRoute from './routes/culture.js';
 import relaxationRoute from './routes/relaxation.js'
-import { error } from 'console';
 
 dotenv.config({ path: './config.env' });
 
