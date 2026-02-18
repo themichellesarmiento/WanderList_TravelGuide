@@ -1,0 +1,12 @@
+<header class="header">
+  <div class="header__logo">
+    <a href="/"><img src="/images/logo.png" alt="logo"></a>
+  </div>
+  <nav class="nav">
+    <li><a href='/' class="<%= currentUrl === '/' ? 'isActive' : ''%>">Home</a></li>
+    <li><a href='/adventures' class="<%= currentUrl.startsWith('/adventures') ? 'isActive' : ''%>">Adventures</a></li>
+    <li><a href='/cultures' class="<%= currentUrl.startsWith('/cultures') ? 'isActive' : ''%>">Culture</a></li>
+    <li><a href='/relaxations' class="<%= currentUrl.startsWith('/relaxations') ? 'isActive' : ''%>">Relaxation</a>
+    </li>
+  </nav>
+</header>
